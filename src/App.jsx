@@ -1,10 +1,11 @@
-import {Body} from './components'
-import './CSS/style.css'
+import Index from './Routes';
+import './CSS/style.css';
+
 function App() {
   return (
-    <>
-    <Body></Body>
-    </>
+    <div>
+      <Index />
+    </div>
   )
 }
-export default App
+export default App;
