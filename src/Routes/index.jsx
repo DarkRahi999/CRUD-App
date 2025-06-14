@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import HomePage from '../pages/Home.jsx'
 import AddBook from '../pages/AddBook.jsx'
-import ReadBook from '../pages/ReadBook.jsx'
+import ReadBook from '../features/Bookview.jsx'
 import EditBook from '../pages/EditBook.jsx'
 import ErrorPage from '../pages/Error.jsx'
 import Navbar from '../Layouts/Navbar.jsx'
