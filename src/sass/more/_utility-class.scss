@@ -9,7 +9,7 @@
   @include fontStyle(var.$font-1, 400);
 }        //Y_----------{  Font weight : 0nly 400 are available  }---------- //
 p{
-  @include fontStyle(var.$font-2, 400);
+  @include fontStyle(var.$font-4, 400);
 }        //Y_----------{  Font weight : 400 - 700	are available  }----------//
 .sub-heading{
   @include fontStyle(var.$font-3, 400);
