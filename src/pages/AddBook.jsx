@@ -1,19 +1,35 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addBooks } from "../features/bookSlice";
+import { useNavigate } from "react-router";
 
 const AddBook = () => {
-  const {title, setTitle} = useState("");
-  const {author, setAuthor} = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const dispatch = useDispatch();
+  const navButton = useNavigate();
+  const numberOfBooks = useSelector((state) => state.book.book.length);
+  
+  const handleSubmit = (e) => {
+  e.preventDefault();
+  const book = { id: numberOfBooks + 1, title, author };
+  dispatch(addBooks(book));
+  setTitle("");
+  setAuthor("");
+  navButton("/readBook", {replace : true});
+};
+ 
   return (
     <div className="flex justify-center py-28 bg-gray-100">
-        <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">Want to add your book!!</h2>
+        <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md hover:shadow-md hover:shadow-gray-400">
+        <h2 className="text-2xl font-bold text-center mb-4 text-slate-800">Want to add your book!!</h2>
 
           <div className="form-title mb-4">
             <h3 className="text-xl font-semibold text-center text-indigo-600">Add Book</h3>
           </div>
 
           <div className="form-elements">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="title" className="block text-gray-700 font-medium mb-2">Title :</label>
                 <input
