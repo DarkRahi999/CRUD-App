@@ -14,7 +14,7 @@ const BookView = () => {
   };
   return (
     <div className="pb-20">
-      <h2 className="py-10">List of Books !!</h2>
+      <h2 className="py-10 text-slate-800">List of Books !!</h2>
         <table className="table-auto border border-gray-400 mx-auto mt-4 w-2/3 text-center">
           <thead>
             <tr className="bg-gray-200">

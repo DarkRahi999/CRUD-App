@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBook } from "../features/bookSlice"; // ⬅️ তোমার slice থেকে import করো
+import { updateBook } from "../features/bookSlice";
 
 const EditBook = () => {
   const location = useLocation();
@@ -19,21 +19,17 @@ const EditBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Redux state update
     dispatch(updateBook({
       id: book.id,
       title,
       author,
     }));
-
-    // Navigate to ReadBook
     navigate("/readBook", {replace: true});
   };
 
   return (
-    <div className="p-10">
-      <h2 className="text-xl font-semibold mb-4">Edit Book (ID: {book.id})</h2>
+    <div className="p-28">
+      <h2 className="text-3xl font-semibold pb-10 text-slate-800">Edit Book (ID: {book.id})</h2>
       <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
         <div>
           <label className="block mb-1">Title:</label>
@@ -44,7 +40,7 @@ const EditBook = () => {
             className="border p-2 w-full"
           />
         </div>
-        <div>
+        <div className="pb-6">
           <label className="block mb-1">Author:</label>
           <input
             type="text"
