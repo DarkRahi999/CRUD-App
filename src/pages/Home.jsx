@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../Layouts/Footer";
 
 export default function HomePage() {
   return (
@@ -27,7 +26,6 @@ export default function HomePage() {
             </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

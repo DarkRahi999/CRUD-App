@@ -5,6 +5,7 @@ import ReadBook from '../features/Bookview.jsx'
 import EditBook from '../pages/EditBook.jsx'
 import ErrorPage from '../pages/Error.jsx'
 import Navbar from '../Layouts/Navbar.jsx'
+import Footer from '../Layouts/Footer.jsx'
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <Route path='/editBook' element={<EditBook />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
   )
 }
